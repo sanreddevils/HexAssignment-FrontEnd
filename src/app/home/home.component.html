@@ -1,0 +1,12 @@
+
+<table class="table table-bordered table-striped">
+  <tr><th>Sl.No</th>
+  <th>Soft Skill</th>
+  <th>Self Rating</th>
+</tr>
+<tr *ngFor="let skill of softSkills">
+  <td>{{skill.ID}}</td>
+  <td>{{skill.SkillName}}</td>
+  <td>{{skill.SkillValue}}</td>
+</tr>
+</table>

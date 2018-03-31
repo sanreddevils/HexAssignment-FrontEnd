@@ -1,0 +1,46 @@
+
+.table > thead > tr > th {
+    vertical-align: middle;
+    border: 1px solid black;
+    
+}
+.table-bordered{
+    border:black;
+}
+tr:nth-child(even) {
+    background-color: lightblue;
+    color: black;
+}
+
+tr:nth-child(odd) {
+    background-color: #4b4ba75f;
+}
+th{
+    background-color:  #0707f55f;
+}
+.margin-bottom-basic {
+    margin-bottom: 15px;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.items-per-page {
+    margin-left: 15px;
+}
+
+.sortable:after {
+    font: 14px/1 FontAwesome;
+    content: "\f0dc";
+}
+
+.sortable.sort-ascent:after {
+    content: '\f0de';
+    vertical-align: bottom;
+}
+
+.sortable.sort-descent:after {
+    content: "\f0dd";
+    vertical-align: top;
+}
