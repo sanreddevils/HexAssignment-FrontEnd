@@ -10,7 +10,7 @@ import { HttpModule } from '@angular/http';
 import { JwtHelper, tokenNotExpired } from 'angular2-jwt';  
   
 import { Constants } from './constants';  
-  
+import 'rxjs/add/observable/of';
 /** 
  * ROPC Authentication service. 
  */  
@@ -284,6 +284,7 @@ import { Constants } from './constants';
       let options = new RequestOptions({ headers: myHeaders, params: myParams });
       return this.http.get(Constants.API_ENDPOINT + 'api/login', options).map(() => true)
       .catch(() => {
+        console.log('error inside CheckConnection')
         // this is executed on a 401 or on any error
         return Observable.of(false);
       });

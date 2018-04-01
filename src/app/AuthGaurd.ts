@@ -37,16 +37,16 @@ import { AuthenticationService } from './loginservice.service';
             let status:boolean
             console.log('token not null') 
            this.authenticationService.CheckConnection()
-           .subscribe((allow: boolean) => {
-               
+           .subscribe((allow: boolean) => {               
             if (!allow) {
-
+            console.log("should navigate to login")
               this.router.navigate(['/login']);
               return false;
             }
           });
         
         }
+       
         return true;
         // Stores the attempted URL for redirecting.  
         // let url: string = state.url;  

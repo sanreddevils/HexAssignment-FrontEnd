@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import {SoftskilldataService} from '../softskilldata.service';
 import {SoftSkillsModel} from '../soft-skill.model';
+import {Constants} from '../constants';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-   this._service.getSkills(1).subscribe(res => this.softSkills = res);
+   this._service.getSkills(Constants.UserID).subscribe(res => this.softSkills = res);
 
   }
 
