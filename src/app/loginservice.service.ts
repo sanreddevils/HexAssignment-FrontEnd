@@ -280,11 +280,10 @@ import 'rxjs/add/observable/of';
       myHeaders.append('Content-Type', 'application/json');
       myHeaders.append('Authorization',"Bearer "+localStorage.getItem('access_token')) ;   
       let myParams = new URLSearchParams();
-     //  myParams.append('UserId', userid);	
       let options = new RequestOptions({ headers: myHeaders, params: myParams });
       return this.http.get(Constants.API_ENDPOINT + 'api/login', options).map(() => true)
       .catch(() => {
-        console.log('error inside CheckConnection')
+       
         // this is executed on a 401 or on any error
         return Observable.of(false);
       });

@@ -15,31 +15,21 @@ import { AuthenticationService } from './loginservice.service';
   
     public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {  
   
-        console.log('can Activate') 
-        // if (tokenNotExpired()) {  
-        //     // Signed in. 
-        //     console.log('tokenNotExpired') 
-        //     return true;  
-        // }  
-
-        
-
-
         let token: string = localStorage.getItem('access_token');  
         if(token == null)
         {
-            console.log('token null')
+           
             this.router.navigate(['/login']);
              return false;
         }
         else
         {  
             let status:boolean
-            console.log('token not null') 
+            
            this.authenticationService.CheckConnection()
            .subscribe((allow: boolean) => {               
             if (!allow) {
-            console.log("should navigate to login")
+            
               this.router.navigate(['/login']);
               return false;
             }
@@ -48,12 +38,7 @@ import { AuthenticationService } from './loginservice.service';
         }
        
         return true;
-        // Stores the attempted URL for redirecting.  
-        // let url: string = state.url;  
-        // this.authenticationService.redirectUrl = url;  
-        // // Not signed in so redirects to signin page.  
-        // this.router.navigate(['/login']);  
-        // return false;  
+          
     }  
   
 } 
